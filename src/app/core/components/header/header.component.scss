@@ -1,0 +1,22 @@
+:host{    
+    
+    left: 0;   
+    position: fixed;
+    z-index: 1;
+    width: 85dvw;
+}
+a {
+  margin-bottom: 30%;
+  color: #0c0a0a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}

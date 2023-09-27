@@ -1,0 +1,21 @@
+<mat-grid-list cols="4" >
+  <app-header *ngIf="isPortrait" id="header">
+  
+  </app-header>
+    <mat-grid-tile *ngIf="isLandscape" class="sidebar">
+      <app-sidebar>
+
+      </app-sidebar>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="isPortrait" colspan="4" class="content">2</mat-grid-tile>
+    <mat-grid-tile *ngIf="isLandscape" colspan="2" class="content">2</mat-grid-tile>
+    <mat-grid-tile *ngIf="isLandscape">
+    <app-sidebarright *ngIf="isLandscape" class="sidebarright">
+      
+
+      </app-sidebarright>
+    </mat-grid-tile> 
+    <app-footer *ngIf="isPortrait" id="footer">
+  
+    </app-footer>
+  </mat-grid-list>
