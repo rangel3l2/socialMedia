@@ -4,15 +4,22 @@ import { TesteComponent } from './teste/teste.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarrightComponent } from './sidebarright/sidebarright.component';
 import { MaterialModule } from 'src/app/material/material.module';
-import { FooterComponent } from './footer/footer.component';
+import { FooterBarComponent } from './footerbar/footerbar.component';
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { RouterModule } from '@angular/router';
+
 
 const COMPONENTS = [
   TesteComponent,
   SidebarrightComponent,
   SidebarComponent,
-  FooterComponent,
-  HeaderComponent
+  FooterBarComponent,
+  HeaderComponent,
+  LoginComponent,
+  RegisterComponent,
 ]
 
 @NgModule({
@@ -20,12 +27,19 @@ const COMPONENTS = [
     TesteComponent,
     COMPONENTS,
     
+    
+    
+    
    
    
   ],
   imports: [
     MaterialModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    
     
   ],
   exports: [

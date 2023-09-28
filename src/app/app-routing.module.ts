@@ -1,17 +1,26 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './core/layout/default/default.component';
-import { TesteComponent } from './core/components/teste/teste.component';
+import { authGuard } from './core/auth/auth.guard.service';
+import { LoginComponent } from './core/components/login/login.component';
+import { RegisterComponent } from './core/components/register/register.component';
+
 const routes: Routes = [
   {
+    path: 'login',  
+    component: LoginComponent,
+
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    
     path: '',
     component : DefaultComponent,
-    children:[
-      {
-        path:'',
-        component: TesteComponent
-      }
-    ]
+    canActivate:[()=> inject(authGuard).canActivate()],
+   
   }
 ];
 

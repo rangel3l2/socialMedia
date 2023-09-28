@@ -1,0 +1,31 @@
+<div class="container-registration">
+  <form [formGroup]="userForm" class="form-group" (ngSubmit)="login()">
+    <div  class="form-group">
+      <mat-label id="title"><span>SnapCut</span></mat-label>
+      
+      <mat-form-field appearance="outline" >
+        <mat-label for="nome">seu nickname</mat-label>
+        <input matInput id="nome" placeholder="Usuário" formControlName="username" />
+        <mat-icon matSuffix>person</mat-icon>                
+      </mat-form-field>
+     
+      
+      <mat-form-field appearance="outline" >
+        <mat-label for="senha">Senha</mat-label>
+        <input matInput id="senha" placeholder="Senha" type="password" formControlName="password" />
+        <mat-icon matSuffix>key</mat-icon>
+      </mat-form-field>
+      <mat-label id="forget_password" routerLink="/register" >Esqueceu a senha?</mat-label>
+    </div>
+
+    <div class="form-group submit-button">
+      <p><button mat-flat-button  type="submit">Enviar</button></p>
+    </div>
+  </form>
+ 
+</div>
+<div class="container-registration" id="registration">
+
+  <mat-label>Não tem conta?</mat-label><span id="register" routerLink="/register">Cadastre-se</span>
+    
+</div>

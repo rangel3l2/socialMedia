@@ -1,0 +1,89 @@
+:host{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: row;
+    padding-top: 1%;
+
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center !important;
+    align-items: center !important;
+
+    
+}
+#title{
+    justify-content: center;
+    color: #221f1f;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 3.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 10vh;   
+}
+ul{
+    list-style: none;
+}
+input{
+    background-color: #f7f3f3;
+    color: #000 !important;
+    width: 100%;   
+} 
+p{
+    text-align: center;
+}
+.container-registration{
+    min-width: 20%;
+    display: flex;
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-left:2%;
+    box-shadow: 1px 1px 7px rgb(78, 77, 77);
+    border-radius: 15px;
+    justify-content: center;
+    margin-left: 3%;
+    align-items: center;
+    
+ 
+}
+#registration{
+    padding-top: 0%;
+    height: 10vh;
+   
+
+}
+#register{
+    color: #5939e9;
+    font-size: 1.3rem;
+    margin-left: 2%;
+    cursor: pointer;
+}
+button{
+    border-radius: 12px;
+    margin-top: 5%;
+    padding: 5%;
+    border: none !important;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    box-shadow: 5px 3px 2px rgb(206, 201, 201);
+    background-color: #5939e9 !important;
+    color:#f8f7f7 !important;
+}
+button:hover{
+    background: #f8f3f3 !important;
+    border-radius: 12px;
+    color: #5939e9 !important;
+}
+
+mat-form-field{
+    box-shadow: 5px 3px 2px rgb(206, 201, 201);
+
+}
+#forget_password{
+    cursor: pointer;
+}
+

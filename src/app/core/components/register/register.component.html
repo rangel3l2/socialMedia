@@ -1,0 +1,50 @@
+<div class="container-registration">
+    <form class="form-group" [formGroup]="userForm" (ngSubmit)="login()">
+      <div  class="form-group">
+        <span id="title">SnapCut</span>
+        
+        <mat-form-field appearance="outline" >
+          <mat-label for="nome">Nome Completo</mat-label>
+          <input matInput id="nome" placeholder="Usuário" formControlName="name" />
+          <mat-icon matSuffix>account_circle</mat-icon>                
+        </mat-form-field>
+       
+        
+        <mat-form-field appearance="outline" >
+          <mat-label for="username">Seu apelido</mat-label>
+          <input matInput id="username" placeholder="Apelido" type="text" formControlName="username" />
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>   
+
+        <mat-form-field appearance="outline" >
+            <mat-label for="senha">Senha</mat-label>
+            <input matInput id="senha" placeholder="Senha" type="password" formControlName="password" />
+            <mat-icon matSuffix>key</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline" >
+            <mat-label for="senha">Repita a senha</mat-label>
+            <input matInput [style]="wrong_password" id="senha-again" placeholder="Senha" type="password" formControlName="password_again" />
+            <mat-icon matSuffix>key</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline" >
+            <mat-label for="senha">Data de nascimento</mat-label>
+            <input matInput id="bithdate" placeholder="Senha" type="text" formControlName="birthdate" />
+            <mat-icon matSuffix>cake</mat-icon>
+          </mat-form-field>
+          
+    
+      </div>
+
+  
+      <div class="form-group submit-button">
+        <p><button mat-flat-button  type="submit">Registrar</button></p>
+      </div>
+    </form>
+   
+  </div>
+  <div class="container-registration" id="registration">
+    
+    <mat-label>Já tem conta?</mat-label><span id="register" routerLink="/login">Entre agora</span>
+      
+  </div>
+  

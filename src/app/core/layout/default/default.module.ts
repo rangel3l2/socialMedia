@@ -15,7 +15,10 @@ import { ComponentsModule } from '../../components/components.module';
     CommonModule,
     RouterModule,
     ComponentsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule,
   ]
 })
-export class DefaultModule { }
+export class DefaultModule {
+
+ }

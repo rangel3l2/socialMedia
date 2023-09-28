@@ -1,8 +1,9 @@
-
-export interface MyData {
-    id: number;
-    name: string;
-    nickname: string;
-    description: string;
-    picture: string;
+export interface User{
+    
+    name?: string;
+    username: string;
+    password: string;
+    description?: string;
+    picture?: string;
+    bithdate?: string;
   }
