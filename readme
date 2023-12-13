@@ -1,0 +1,25 @@
+# Meu Projeto
+
+Este é um projeto incrível que faz coisas incríveis. Aqui estão as instruções para configurar SSL localmente.
+
+## Configuração do SSL para Desenvolvimento
+
+1. Gere uma chave privada
+```bash
+openssl genpkey -algorithm RSA -out server-key.pem
+
+2. Gere um Pedido de Assinatura de Certificado (CSR - Certificate Signing Request)
+
+```bash
+openssl req -new -key server-key.pem -out server-csr.pem
+3. Assine o CSR usando uma Autoridade Certificadora (CA) ou Autoassinatura
+```Bash
+openssl x509 -req -in server-csr.pem -signkey server-key.pem -out server-cert.pem
+
+
+### Usando o Angular CLI
+
+Se estiver usando o Angular CLI para desenvolvimento local, você pode habilitar o suporte SSL da seguinte maneira:
+
+```bash
+ng serve --ssl --ssl-key <caminho para a chave privada> --ssl-cert <caminho para o certificado>
