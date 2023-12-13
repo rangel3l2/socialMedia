@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TesteComponent } from './teste/teste.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarrightComponent } from './sidebarright/sidebarright.component';
 import { MaterialModule } from 'src/app/material/material.module';
@@ -10,28 +9,23 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from '@angular/router';
+import { RecordComponent } from './record/record.component';
 
 
 const COMPONENTS = [
-  TesteComponent,
   SidebarrightComponent,
   SidebarComponent,
   FooterBarComponent,
   HeaderComponent,
   LoginComponent,
   RegisterComponent,
+  RecordComponent,
 ]
 
 @NgModule({
   declarations: [
-    TesteComponent,
     COMPONENTS,
-    
-    
-    
-    
-   
-   
+
   ],
   imports: [
     MaterialModule,
@@ -39,8 +33,7 @@ const COMPONENTS = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    
-    
+  
   ],
   exports: [
     COMPONENTS

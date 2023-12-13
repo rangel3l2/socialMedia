@@ -1,21 +1,13 @@
-<mat-grid-list cols="4" >
-  <app-header *ngIf="isPortrait" id="header">
-  
-  </app-header>
-    <mat-grid-tile *ngIf="isLandscape" class="sidebar">
-      <app-sidebar>
+<div class="container-default">
 
-      </app-sidebar>
-    </mat-grid-tile>
-    <mat-grid-tile *ngIf="isPortrait" colspan="4" class="content">2</mat-grid-tile>
-    <mat-grid-tile *ngIf="isLandscape" colspan="2" class="content">2</mat-grid-tile>
-    <mat-grid-tile *ngIf="isLandscape">
-    <app-sidebarright *ngIf="isLandscape" class="sidebarright">
-      
+  <app-sidebar>
+  </app-sidebar>
 
-      </app-sidebarright>
-    </mat-grid-tile> 
-    <app-footerbar *ngIf="isPortrait" id="footer">
-        
-    </app-footerbar>
-  </mat-grid-list>
+ 
+    <router-outlet>
+    </router-outlet> 
+
+  <app-sidebarright>
+  </app-sidebarright>
+
+</div>

@@ -12,7 +12,8 @@ export class authGuard {
 
   canActivate(): boolean {
     console.log(this.authService.isLoggedIn);
-    if (this.authService.isLoggedIn != 'no') {
+    //if (ths.authService.isLoggedIn ==  'yes');
+    if (this.authService.isLoggedIn != 'yes') {
       console.log('entrou')
       return true;
     } else {

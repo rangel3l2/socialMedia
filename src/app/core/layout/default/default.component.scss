@@ -1,20 +1,8 @@
-mat-grid-list{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-mat-grid-tile {
-    background: #eef6f8;
-    display: grid;
-    place-items: center;
-  }
-.sidebar{
-  
-    position: fixed;
-    height: 100vh;
 
-}
-.content{  
- 
-  height: 200vh;
+.container-default{
+  display: flex;
+  background: #eff3f7;
+  height: 100vh;
+  width: 100% !important;
+  justify-content: space-between;
 }
