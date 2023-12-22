@@ -23,3 +23,5 @@ Se estiver usando o Angular CLI para desenvolvimento local, você pode habilitar
 
 ```bash
 ng serve --ssl --ssl-key <caminho para a chave privada> --ssl-cert <caminho para o certificado>
+
+ng s --ssl --ssl-key ./server-key.pem --ssl-cert ./server-cert.pem --host 192.168.0.110

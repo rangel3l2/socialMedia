@@ -3,12 +3,15 @@
     
     <div style="text-align:center">
         <h1 style="margin-bottom:30px;">Veja como está</h1>
-        <video class="video" #liveVideo autoplay controls></video>
-        <span class="m-1"></span>
-        <video class="video" style="width:480px !important;" controls #recordedVideo></video>
-        <br>
-        <button class="btn btn-success btn-lg" *ngIf="!isRecording" (click)="startVideoRecording()">Start Recording</button>
+        <video class="video" id="video" #liveVideo autoplay *ngIf="!showRecordedVideo || !isRecording"></video>
+
+        <video class="video" style="width:300px; height:225px !important" controls #recordedVideo *ngIf="showRecordedVideo"></video>
+        <span class="m-1"></span> 
+        <div class="recording" >
+         
+        <button #startRecording class="btn btn-success btn-lg" *ngIf="!isRecording" (click)="startVideoRecording()">Start Recording</button>
         <button class="btn btn-warning btn-lg" *ngIf="isRecording" (click)="stopVideoRecording()">Stop Recording</button>
       </div>
+    </div>  
 </div>
 

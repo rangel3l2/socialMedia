@@ -1,15 +1,15 @@
 :host{
     display: flex !important;
     margin-left: calc(18%) !important;  
-    padding: 1.8rem !important;
-   
+    padding: 1.8rem !important;   
     width: 50%;
-    
-
 }
-.record-container{ 
- 
-   
-    
-  
+.recording{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
+#video {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }

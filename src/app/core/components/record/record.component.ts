@@ -7,30 +7,41 @@ declare var MediaRecorder: any;
   styleUrls: ['./record.component.scss']
 })
 export class RecordComponent implements OnInit {
-
-  videoElement!: HTMLVideoElement;
-    recordVideoElement!: HTMLVideoElement;
+    
+    videoElement: HTMLVideoElement | null = null;
+    recordVideoElement: HTMLVideoElement | null = null;
     mediaVideoRecorder?: any;
     videoRecordedBlobs!: Blob[];
     isRecording: boolean = false;
     downloadVideoUrl?: string;
+    showRecordedVideo: boolean | null = null;
     stream?: MediaStream;
     @ViewChild('recordedVideo') recordVideoElementRef!: ElementRef;
     @ViewChild('liveVideo') videoElementRef!: ElementRef;
+    @ViewChild('startRecording') btn_start_recording!: ElementRef
     constructor() {}
-    async ngOnInit() {
+    async ngOnInit() {       
+
+       
         navigator.mediaDevices.getUserMedia({
             video: {
-                width: 480
+                width: 300
             }
         }).then(stream => {
-            this.videoElement = this.videoElementRef.nativeElement;
-            this.recordVideoElement = this.recordVideoElementRef.nativeElement;
+        
+            this.videoElement = this.videoElementRef.nativeElement;      
+            
             this.stream = stream;
-            this.videoElement.srcObject = this.stream;
+            if(this.videoElement){
+                this.videoElement.srcObject = this.stream;
+            }
+            
+
         });
+        
     }
     startVideoRecording() {
+        this.showRecordedVideo = false
         this.videoRecordedBlobs = [];
         let options: any = {
             mimeType: 'video/webm'
@@ -44,17 +55,51 @@ export class RecordComponent implements OnInit {
         this.isRecording = !this.isRecording;
         this.onDataAvailableVideoEvent();
         this.onStopVideoRecordingEvent();
-    }
-    stopVideoRecording() {
-        this.mediaVideoRecorder.stop();
-        this.isRecording = !this.isRecording;
-    }
-    playRecording() {
-        if (!this.videoRecordedBlobs || !this.videoRecordedBlobs.length) {
-            return;
+        if(this.recordVideoElement){
+            console.log(this.recordVideoElement)
         }
+        console.log(this.showRecordedVideo)
+       
+    }
+   
+    stopVideoRecording() {
+        if (this.btn_start_recording) {
+            this.btn_start_recording.nativeElement.style.width = '50%';
+          }
+        
+          // Exiba o vídeo gravado
+          this.showRecordedVideo = true
+          if (this.mediaVideoRecorder) {
+           
+          this.mediaVideoRecorder.stop();
+          this.isRecording = false;
+         
+        
+          // Defina o elemento recordVideoElement para o elemento nativo
+         
+      
+          // Crie um objeto Blob a partir dos dados gravados
+          const videoBuffer = new Blob(this.videoRecordedBlobs, {
+            type: 'video/webm'
+          });
+      
+          // Crie uma URL para o Blob e atribua ao src do elemento de vídeo gravado
+          this.downloadVideoUrl = window.URL.createObjectURL(videoBuffer);
+        
+          
+        
+        }
+      }
+      
+  playRecording() {
+    if (!this.videoRecordedBlobs || !this.videoRecordedBlobs.length) {
+      return;
+    }
+    if(this.recordVideoElement){
         this.recordVideoElement.play();
     }
+   
+  }
     onDataAvailableVideoEvent() {
         try {
             this.mediaVideoRecorder.ondataavailable = (event: any) => {
@@ -73,7 +118,17 @@ export class RecordComponent implements OnInit {
                     type: 'video/webm'
                 });
                 this.downloadVideoUrl = window.URL.createObjectURL(videoBuffer);
-                this.recordVideoElement.src = this.downloadVideoUrl;
+               
+             
+                this.recordVideoElement = this.recordVideoElementRef.nativeElement
+                if(this.recordVideoElement){
+                    this.recordVideoElement.src = this.downloadVideoUrl;
+                }
+              
+                
+                    
+              
+                              
             };
         } catch (error) {
             console.log(error);
